@@ -134,6 +134,6 @@ class JavaScriptTransformer
             return [$arguments[0] => $arguments[1]];
         }
 
-        throw new Exception('Try JavaScript::put(["foo" => "bar"])');
+        throw new Exception('Try put(["name" => "helingfeng"])');
     }
 }
