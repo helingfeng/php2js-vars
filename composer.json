@@ -1,0 +1,21 @@
+{
+  "name": "helingfeng/php-java-script-transformer",
+  "authors": [
+    {
+      "name": "helingfeng",
+      "email": "dreamhelingfeng@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "JavaScriptTransformer\\": "src/JavaScriptTransformer/"
+    }
+  },
+  "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.phpcomposer.com"
+    }
+  }
+}
