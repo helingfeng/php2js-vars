@@ -21,8 +21,8 @@ composer require helingfeng/php-java-script-transformer 1.0
 
 ## 成功输出
 ./composer.json has been updated
-Loading composer repositories with package information                                                                          Updating dependencies (including require-dev)
-  - Installing helingfeng/php-java-script-transformer (1.0): Cloning c88a2cc375 from cache
+Loading composer repositories with package information                                                                       
+ - Installing helingfeng/php-java-script-transformer (1.0): Cloning c88a2cc375 from cache
 Writing lock file
 Generating autoload files
 
@@ -36,12 +36,7 @@ Generating autoload files
 - 字符串 String
 
 ```
-require_once __DIR__ . '/../vendor/autoload.php';
-
-use JavaScriptTransformer\JavaScriptTransformer;
-
 $transfer = new JavaScriptTransformer();
-
 $script = $transfer->put(['username'=>'helingfeng']);
 
 echo $script;
@@ -59,7 +54,6 @@ window.username = 'helingfeng';
 
 ```
 $transfer = new JavaScriptTransformer();
-
 $script = $transfer->put(['person'=>['name'=>'helingfeng','age'=>18]]);
 
 echo $script;
@@ -75,7 +69,6 @@ window.person = {"name":"helingfeng","age":18};
 
 ```
 $transfer = new JavaScriptTransformer('home');
-
 $script = $transfer->put(['person'=>['name'=>'helingfeng','age'=>18]]);
 
 echo $script;
