@@ -37,7 +37,7 @@ class JavaScriptTransformer
     /**
      * Create a new JS transformer instance.
      *
-     * @param string     $namespace
+     * @param string $namespace
      */
     function __construct($namespace = 'window')
     {
@@ -111,7 +111,7 @@ class JavaScriptTransformer
         foreach ($this->transformers as $transformer) {
             $js = (new $transformer)->transform($value);
 
-            if (! is_null($js)) {
+            if (!is_null($js)) {
                 return $js;
             }
         }
@@ -135,5 +135,18 @@ class JavaScriptTransformer
         }
 
         throw new Exception('Try put(["name" => "helingfeng"])');
+    }
+
+    /**
+     * @param $script
+     * @return string
+     */
+    public function html($script)
+    {
+        return <<<EOT
+<script>
+    $script
+</script>
+EOT;
     }
 }
