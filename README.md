@@ -1,10 +1,33 @@
 # PHP-JavaScript-Transformer
-将PHP变量转换成JavaScript变量扩展包
+
+将 `PHP` 变量输出为 `JavaScript` 变量声明脚本 扩展包
 
 ## Usage
 
+```
+composer require helingfeng/php-javascript-transformer
+```
 
-### PHP变量转换JavaScript
+
+### Laravel
+
+```php
+
+app('js.transformer')->put(['username' => 'helingfeng']);
+#window.username = 'helingfeng';
+
+app('js.transformer')->setNamespace('profile')->put(['username' => 'helingfeng']);
+# window.profile = window.profile || {};profile.username = 'helingfeng';
+
+app('js.transformer')->includeScript()->put(['username' => 'helingfeng']);
+# <script>
+#    window.username = 'helingfeng';
+#</script>
+```
+
+
+
+### 其他
 
 - 字符串 String
 
