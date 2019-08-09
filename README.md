@@ -9,7 +9,9 @@ composer require helingfeng/php-javascript-transformer
 ```
 
 
-### Laravel
+### Laravel5.5 框架
+
+直接使用容器构建：
 
 ```php
 
@@ -27,7 +29,7 @@ app('js.transformer')->includeScript()->put(['username' => 'helingfeng']);
 
 
 
-### 其他
+### 其他方式
 
 - 字符串 String
 
