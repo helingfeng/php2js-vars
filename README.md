@@ -1,6 +1,6 @@
 # PHP-JavaScript-Transformer
 
-将 `PHP` 变量输出为 `JavaScript` 变量声明脚本 扩展包
+将 `PHP` 变量输出为 `JavaScript` 变量声明定义脚本 扩展包
 
 ## Usage
 
