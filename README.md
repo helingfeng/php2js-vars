@@ -27,7 +27,7 @@ app('js.transformer')->includeScript()->put(['username' => 'helingfeng']);
 #</script>
 ```
 
-
+模板中使用 `{!!  !!}` 非转义输出
 
 ### 其他方式
 
