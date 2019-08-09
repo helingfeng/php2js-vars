@@ -3,12 +3,12 @@
 namespace JavaScriptTransformer;
 
 use Exception;
-use JavaScriptTransformer\Transformers\StringTransformer;
 use JavaScriptTransformer\Transformers\ArrayTransformer;
-use JavaScriptTransformer\Transformers\ObjectTransformer;
-use JavaScriptTransformer\Transformers\NumericTransformer;
-use JavaScriptTransformer\Transformers\NullTransformer;
 use JavaScriptTransformer\Transformers\BooleanTransformer;
+use JavaScriptTransformer\Transformers\NullTransformer;
+use JavaScriptTransformer\Transformers\NumericTransformer;
+use JavaScriptTransformer\Transformers\ObjectTransformer;
+use JavaScriptTransformer\Transformers\StringTransformer;
 
 class JavaScriptTransformer
 {
@@ -19,6 +19,7 @@ class JavaScriptTransformer
      */
     protected $namespace;
 
+    protected $includeScriptTag = false;
 
     /**
      * All transformable types.
@@ -31,7 +32,7 @@ class JavaScriptTransformer
         ObjectTransformer::class,
         NumericTransformer::class,
         BooleanTransformer::class,
-        NullTransformer::class
+        NullTransformer::class,
     ];
 
     /**
@@ -39,9 +40,27 @@ class JavaScriptTransformer
      *
      * @param string $namespace
      */
-    function __construct($namespace = 'window')
+    public function __construct($namespace = 'window')
     {
         $this->namespace = $namespace;
+    }
+
+    /**
+     * Set Js Namespace
+     */
+    public function setNamespace($namespace = 'window')
+    {
+        $this->namespace = $namespace;
+        return $this;
+    }
+
+    /** 
+     *  include script tag
+     */
+    public function includeScript()
+    {
+        $this->includeScriptTag = true;
+        return $this;
     }
 
     /**
@@ -52,7 +71,9 @@ class JavaScriptTransformer
         $javascript = $this->constructJavaScript(
             $this->normalizeInput(func_get_args())
         );
-
+        if ($this->includeScriptTag) {
+            $javascript = $this->html($javascript);
+        }
         return $javascript;
     }
 

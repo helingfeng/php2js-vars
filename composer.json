@@ -6,7 +6,9 @@
       "email": "dreamhelingfeng@gmail.com"
     }
   ],
-  "require": {},
+  "require": {
+    "laravel/framework": "^5.5"
+  },
   "autoload": {
     "psr-4": {
       "JavaScriptTransformer\\": "src/JavaScriptTransformer/"
@@ -17,5 +19,12 @@
       "type": "composer",
       "url": "https://packagist.phpcomposer.com"
     }
+  },
+  "extra": {
+      "laravel": {
+          "providers": [
+              "JavaScriptTransformer\\TransformerServiceProvider"
+          ]
+      }
   }
 }
