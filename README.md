@@ -15,12 +15,15 @@ composer require helingfeng/php-javascript-transformer
 
 ```php
 
-app('js.transformer')->put(['username' => 'helingfeng']);
-#window.username = 'helingfeng';
+// 包含特殊字符输出
+app('js.transformer')->put(['username' => "'helingfeng"]);
+# window.username = '\'helingfeng';
 
+// 修改 namespace 输出
 app('js.transformer')->setNamespace('profile')->put(['username' => 'helingfeng']);
 # window.profile = window.profile || {};profile.username = 'helingfeng';
 
+// 输出包含 script 标签
 app('js.transformer')->includeScript()->put(['username' => 'helingfeng']);
 # <script>
 #    window.username = 'helingfeng';
